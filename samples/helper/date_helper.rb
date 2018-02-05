@@ -1,5 +1,5 @@
 # Dummy date vars
-module DateContext
+module DateHelper
   def today
     Date.today.strftime('%Y-%m-%d')
   end
