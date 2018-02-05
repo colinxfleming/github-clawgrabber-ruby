@@ -1,25 +1,32 @@
 require 'github_clawgrabber/version'
 require 'github_clawgrabber/fetcher'
 require 'github_clawgrabber/templater'
+require 'github_clawgrabber/context_shell'
 
 module GithubClawgrabber
-  def self.grab(auth_token, repo, filepath, branch = 'master')
-    content = fetch auth_token, repo, filepath, branch
-    template
-    output
-  end
+  class << self
+    def grab(auth_token, repo, filepath, branch = 'master', *helper_modules)
+      content = fetch auth_token, repo, filepath, branch
+      context = ContextShell.new helper_modules
+      results = template content, context
+      puts results
+      results
+    end
 
-  private
+    private
 
-  def fetch
-    Fetcher.fetcher auth_token, repo, filepath, branch
-  end
+    def fetch(auth_token, repo, filepath, branch)
+      Fetcher.fetch auth_token, repo, filepath, branch
+    end
 
-  def template
-    Templater.something
-  end
+    def template(content, context)
+      content.map do |item|
+        Templater.template item, context
+      end
+    end
 
-  def output
-    Outputter.something
+    def output
+      Outputter.something
+    end
   end
 end
