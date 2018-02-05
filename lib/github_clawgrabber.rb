@@ -1,5 +1,4 @@
 require 'github_clawgrabber/version'
-require 'github_clawgrabber/authentciator'
 require 'github_clawgrabber/fetcher'
 require 'github_clawgrabber/templater'
 
