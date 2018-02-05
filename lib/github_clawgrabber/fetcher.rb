@@ -8,7 +8,8 @@ module GithubClawgrabber
     class << self
       def fetch(auth_token, repo, filepath, branch)
         response = make_api_call auth_token, repo, filepath, branch
-        response
+        content = JSON.parse(response.body)['data']['repository']['object']['text']
+        shape_response repo, filepath, content
       end
 
       private
@@ -31,6 +32,18 @@ module GithubClawgrabber
         object = "object(expression: \"#{branch}:#{filepath}\")"
         json = "query { #{repository} { #{object} { ... on Blob { text } } } }"
         { query: json }.to_json
+      end
+
+      def shape_response(content)
+        {
+          repo: repo,
+          contents: [
+            {
+              file: filepath,
+              content: content
+            }
+          ]
+        }
       end
     end
   end

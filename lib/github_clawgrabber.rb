@@ -12,7 +12,7 @@ module GithubClawgrabber
   private
 
   def fetch
-    Fetcher.something
+    Fetcher.fetcher auth_token, repo, filepath, branch
   end
 
   def template
