@@ -8,4 +8,16 @@ class FetcherTest < TestClass
                    GithubClawgrabber::Fetcher::GITHUB_GRAPHQL_ENDPOINT
     end
   end
+
+  describe 'fetching' do
+    before do
+      stub_request(:get, 'api.github.com/graphql')
+        .to_return()
+
+    end
+
+    it 'should make an api call' do
+
+    end
+  end
 end
