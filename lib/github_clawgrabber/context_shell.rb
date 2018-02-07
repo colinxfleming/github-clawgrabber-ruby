@@ -1,7 +1,7 @@
 module GithubClawgrabber
   # a dummy class to hold our modules
   class ContextShell
-    def initialize(helper_modules)
+    def initialize(helper_modules = [])
       helper_modules.each do |helper|
         self.class.send :include, helper
       end
