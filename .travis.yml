@@ -3,6 +3,8 @@ language: ruby
 rvm:
   - 2.4.1
 before_install: gem install bundler
+install:
+  - bundle install
 script:
   - rake test
   - gem install bundler-audit --no-rdoc; bundle-audit update; bundle-audit check
