@@ -7,7 +7,7 @@ Works great with:
 
 * Shared reporting SQL -- define variables and constants, and keep em version
   controlled! No more mystery UDFs!
-* Mass generating text files -- 
+* Mass generating files based on a template!
 * Literally anything else where you find yourself wishing 'I wish I had a
   ruby function I could write instead of this!'
 
@@ -104,4 +104,4 @@ The gem is available as open source under the terms of the
 
 ## Code of Conduct
 
-Everyone interacting in the GithubClawgrabber project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/github_clawgrabber/blob/master/CODE_OF_CONDUCT.md).
+Everyone interacting in the GithubClawgrabber project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/colinxfleming/github_clawgrabber/blob/master/CODE_OF_CONDUCT.md).
