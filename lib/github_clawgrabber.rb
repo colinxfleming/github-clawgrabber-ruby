@@ -24,9 +24,5 @@ module GithubClawgrabber
         Templater.template item, context
       end
     end
-
-    def output
-      Outputter.something
-    end
   end
 end
