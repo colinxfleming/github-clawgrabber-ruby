@@ -1,5 +1,7 @@
 # Github Clawgrabber
 
+[![Build Status](https://travis-ci.org/colinxfleming/github_clawgrabber_ruby.svg?branch=master)](https://travis-ci.org/colinxfleming/github_clawgrabber_ruby)
+
 Is your heart's deepest wish to mash variables into something that doesn't
 have variables, and smash the
 
